@@ -1,0 +1,42 @@
+{
+    "name": "L3yIncubator/SearchBundle",
+    "description": "Database search made it very simple task",
+    "type": "symfony-bundle",
+    "homepage": "https://github.com/lele140686/SearchBundle",
+    "authors": [
+        {
+            "name": "Leroy Ley Loredo",
+            "email": "lele140686@gmail.com"
+        }
+    ],
+    "keywords": [
+        "symfony",
+        "search"
+    ],
+    "license": [
+        "MIT"
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": ">2.1.0",
+        "doctrine/orm": "*",
+        "doctrine/doctrine-bundle": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "L3yIncubator\\SearchBundle": ""
+        }
+    },
+    "target-dir": "L3yIncubator/SearchBundle",
+    "repositories": [
+        {
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+          "dev-master": "some_version-dev"
+        }
+    },
+    "require-dev": {
+    }
+}
