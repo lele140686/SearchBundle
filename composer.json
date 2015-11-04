@@ -1,5 +1,5 @@
 {
-    "name": "L3yIncubator/SearchBundle",
+    "name": "l3yincubator/searchbundle",
     "description": "Database search made it very simple task",
     "type": "symfony-bundle",
     "homepage": "https://github.com/lele140686/SearchBundle",
