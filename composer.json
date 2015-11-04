@@ -34,7 +34,7 @@
     ],
     "extra": {
         "branch-alias": {
-          "dev-master": "some_version-dev"
+          "dev-master": "0.1"
         }
     },
     "require-dev": {
