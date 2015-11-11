@@ -31,17 +31,37 @@ class Filter
     private $operators = array();
 
     /**
+     * Last key element
+     *
+     * @var string
+     */
+    private $last;
+
+    /**
+     * @var int
+     */
+    private $offset;
+
+    /**
+     * @var int
+     */
+    private $limit;
+
+    /**
      * @param string $data
      * @param string $entity
      * @param string $alias
+     * @param array  $parameters
      * @param array  $operators
      */
-    public function __construct($data, $entity, $alias, array $operators = array())
+    public function __construct($data, $entity, $alias, array $parameters = array(), array $operators = array())
     {
-        $this->data = $data;
+        $this->setData($data);
         $this->entity = $entity;
         $this->alias = $alias;
         $this->operators = $operators;
+        $this->offset = isset($parameters['offset']) ? (int) $parameters['offset'] : 0;
+        $this->limit = isset($parameters['limit']) ? (int) $parameters['limit'] : 0;
     }
 
     /**
@@ -58,6 +78,9 @@ class Filter
     public function setData(array $data)
     {
         $this->data = $data;
+
+        $keys = array_keys($data);
+        $this->last = array_pop($keys);
     }
 
     /**
@@ -97,7 +120,7 @@ class Filter
      */
     public function getOperators()
     {
-        return $this->Operators;
+        return $this->operators;
     }
 
     /**
@@ -106,5 +129,49 @@ class Filter
     public function setOperators($operators)
     {
         $this->operators = $operators;
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function getLast()
+    {
+        return $this->last;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->offset;
+    }
+
+    /**
+     * @param int $offset
+     * @return $this
+     */
+    public function setOffset($offset)
+    {
+        $this->offset = $offset;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * @param int $limit
+     * @return $this
+     */
+    public function setLimit($limit)
+    {
+        $this->limit = $limit;
+        return $this;
     }
 }

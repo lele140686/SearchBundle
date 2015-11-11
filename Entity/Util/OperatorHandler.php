@@ -35,6 +35,7 @@ class OperatorHandler
      * @var array
      */
     public static $nameOperators = array(
+        '='     => '',
         '>='    => '',
         '>'     => '',
         '<='    => '',
